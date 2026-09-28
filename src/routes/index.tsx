@@ -11,7 +11,6 @@ import githubLogo from "@/assets/github.png.asset.json";
 import ibmLogo from "@/assets/ibm.png.asset.json";
 import {
   content,
-  certifications,
   contactDetails,
   sources,
   type Lang,
