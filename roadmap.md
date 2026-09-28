@@ -1,0 +1,4 @@
+- [x] Add D&P logo to top-left and browser icon.
+- [x] Apply the requested English and Estonian copy changes.
+- [x] Open matching service information when each icon is selected.
+- [x] Replace certification names with supplied logos; keep text where no logo was supplied.
