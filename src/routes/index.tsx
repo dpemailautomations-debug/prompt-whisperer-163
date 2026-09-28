@@ -1,5 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import dpLogo from "@/assets/dp-logo.png.asset.json";
+import cbsLogo from "@/assets/cbs.png.asset.json";
+import tartuLogo from "@/assets/tartu.png.asset.json";
+import harvardLogo from "@/assets/harvard.png.asset.json";
+import googleLogo from "@/assets/google.png.asset.json";
+import githubLogo from "@/assets/github.png.asset.json";
+import ibmLogo from "@/assets/ibm.png.asset.json";
 import {
   content,
   certifications,
@@ -68,14 +77,32 @@ function GearIcon() {
   );
 }
 
-function Circle({ children, label }: { children: React.ReactNode; label: string }) {
+const certificationLogos = [
+  { name: "Copenhagen Business School", image: cbsLogo.url },
+  { name: "Tartu Ülikool", image: tartuLogo.url },
+  { name: "Harvard University", image: harvardLogo.url },
+  { name: "Google", image: googleLogo.url },
+  { name: "Anthropic", image: null },
+  { name: "IBM", image: ibmLogo.url },
+  { name: "GitHub", image: githubLogo.url },
+];
+
+function Circle({ children, label, details }: { children: React.ReactNode; label: string; details: React.ReactNode }) {
   return (
-    <div className="flex flex-col items-center gap-5">
-      <div className="flex h-32 w-32 items-center justify-center rounded-full border border-border text-navy md:h-40 md:w-40">
-        {children}
-      </div>
-      <span className="text-base font-medium tracking-tight md:text-lg">{label}</span>
-    </div>
+    <Dialog>
+      <DialogTrigger asChild>
+        <Button variant="ghost" className="group mx-auto h-auto w-full flex-col gap-5 rounded-none bg-transparent px-2 py-0 text-foreground shadow-none hover:bg-transparent hover:text-foreground">
+          <span className="flex h-32 w-32 items-center justify-center rounded-full border border-border text-navy transition-colors group-hover:border-primary group-hover:bg-secondary group-focus-visible:border-primary md:h-40 md:w-40">
+            {children}
+          </span>
+          <span className="whitespace-normal text-center text-base font-medium md:text-lg">{label}</span>
+        </Button>
+      </DialogTrigger>
+      <DialogContent className="max-h-[85vh] overflow-y-auto rounded-sm sm:rounded-sm">
+        <DialogHeader><DialogTitle className="pr-8 text-left text-2xl leading-tight">{label}</DialogTitle></DialogHeader>
+        <div className="space-y-6 leading-relaxed text-muted-foreground">{details}</div>
+      </DialogContent>
+    </Dialog>
   );
 }
 
@@ -87,8 +114,9 @@ function Index() {
     <div className="min-h-screen bg-background text-foreground">
       <header className="sticky top-0 z-50 border-b border-border bg-background/90 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
-          <a href="#top" className="text-sm font-semibold tracking-[0.18em] uppercase">
-            D&amp;P Automations
+          <a href="#top" className="flex items-center gap-3 text-sm font-semibold tracking-[0.18em] uppercase">
+            <img src={dpLogo.url} alt="" className="h-10 w-10 rounded-sm object-cover" />
+            <span>D&amp;P Automations</span>
           </a>
           <nav className="hidden items-center gap-10 text-sm text-muted-foreground md:flex">
             <a href="#services" className="transition-colors hover:text-foreground">{t.nav.services}</a>
@@ -96,21 +124,23 @@ function Index() {
             <a href="#contact" className="transition-colors hover:text-foreground">{t.nav.contact}</a>
           </nav>
           <div className="flex items-center gap-1 text-sm">
-            <button
+            <Button
+              variant="ghost"
               type="button"
               onClick={() => setLang("et")}
-              className={`px-2 py-1 transition-colors ${lang === "et" ? "font-semibold text-foreground" : "text-muted-foreground hover:text-foreground"}`}
+              className={`h-auto px-2 py-1 transition-colors ${lang === "et" ? "font-semibold text-foreground" : "text-muted-foreground hover:text-foreground"}`}
             >
               EST
-            </button>
+            </Button>
             <span className="text-border">/</span>
-            <button
+            <Button
+              variant="ghost"
               type="button"
               onClick={() => setLang("en")}
-              className={`px-2 py-1 transition-colors ${lang === "en" ? "font-semibold text-foreground" : "text-muted-foreground hover:text-foreground"}`}
+              className={`h-auto px-2 py-1 transition-colors ${lang === "en" ? "font-semibold text-foreground" : "text-muted-foreground hover:text-foreground"}`}
             >
               ENG
-            </button>
+            </Button>
           </div>
         </div>
       </header>
@@ -153,10 +183,20 @@ function Index() {
             </h2>
 
             <div className="mt-16 grid grid-cols-1 gap-14 sm:grid-cols-2 lg:grid-cols-4">
-              <Circle label={t.services.phone.title}><PhoneIcon /></Circle>
-              <Circle label={t.services.email.title}><MailIcon /></Circle>
-              <Circle label={t.services.website.title}><GlobeIcon /></Circle>
-              <Circle label={t.services.custom.title}><GearIcon /></Circle>
+              <Circle label={t.services.phone.title} details={
+                <>
+                  {[t.services.phone.caller, t.services.phone.sms].map((item) => (
+                    <div key={item.title}>
+                      <h4 className="font-semibold text-foreground">{item.title}</h4>
+                      <p className="mt-2">{item.body}</p>
+                      <ul className="mt-3 space-y-1 text-sm">{item.points.map((point) => <li key={point}>— {point}</li>)}</ul>
+                    </div>
+                  ))}
+                </>
+              }><PhoneIcon /></Circle>
+              <Circle label={t.services.email.title} details={<p>{t.services.email.body}</p>}><MailIcon /></Circle>
+              <Circle label={t.services.website.title} details={<p>{t.services.website.body}</p>}><GlobeIcon /></Circle>
+              <Circle label={t.services.custom.title} details={<p>{t.services.custom.body}</p>}><GearIcon /></Circle>
             </div>
 
             <div className="mt-24 space-y-20">
@@ -201,10 +241,10 @@ function Index() {
               {t.certs.heading}
             </h2>
             <div className="mt-12 flex flex-wrap items-center justify-center gap-x-12 gap-y-6">
-              {certifications.map((c) => (
-                <span key={c} className="text-base font-medium tracking-tight md:text-lg">
-                  {c}
-                </span>
+              {certificationLogos.map((c) => (
+                <div key={c.name} className="flex h-16 w-28 items-center justify-center md:w-32">
+                  {c.image ? <img src={c.image} alt={c.name} className="max-h-14 max-w-full object-contain" /> : <span className="text-base font-medium">{c.name}</span>}
+                </div>
               ))}
             </div>
           </div>
