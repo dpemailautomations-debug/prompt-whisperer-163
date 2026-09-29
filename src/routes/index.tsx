@@ -2,13 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import dpLogo from "@/assets/dp-logo.png.asset.json";
-import cbsLogo from "@/assets/cbs.png.asset.json";
-import tartuLogo from "@/assets/tartu.png.asset.json";
-import harvardLogo from "@/assets/harvard.png.asset.json";
-import googleLogo from "@/assets/google.png.asset.json";
-import githubLogo from "@/assets/github.png.asset.json";
-import ibmLogo from "@/assets/ibm.png.asset.json";
 import {
   content,
   contactDetails,
@@ -77,15 +70,14 @@ function GearIcon() {
 }
 
 const certificationLogos = [
-  { name: "Copenhagen Business School", image: cbsLogo.url },
-  { name: "Tartu Ülikool", image: tartuLogo.url },
-  { name: "Harvard University", image: harvardLogo.url },
-  { name: "Google", image: googleLogo.url },
-  { name: "Anthropic", image: null },
-  { name: "IBM", image: ibmLogo.url },
-  { name: "GitHub", image: githubLogo.url },
+  { name: "Copenhagen Business School", image: "/cbs.PNG" },
+  { name: "Tartu Ülikool", image: "/tu.PNG" },
+  { name: "Harvard University", image: "/harvard.jpg" },
+  { name: "Google", image: "/google.WEBP" },
+  { name: "Anthropic", image: "/anthropic.PNG" },
+  { name: "IBM", image: "/ibm.png" },
+  { name: "GitHub", image: "/github.PNG" },
 ];
-
 function Circle({ children, label, details }: { children: React.ReactNode; label: string; details: React.ReactNode }) {
   return (
     <Dialog>
@@ -114,7 +106,7 @@ function Index() {
       <header className="sticky top-0 z-50 border-b border-border bg-background/90 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
           <a href="#top" className="flex items-center gap-3 text-sm font-semibold tracking-[0.18em] uppercase">
-            <img src={dpLogo.url} alt="" className="h-10 w-10 rounded-sm object-cover" />
+            <img src="/logo.png" alt="D&P Automations" className="h-10 w-10 rounded-sm object-cover" />
             <span>D&amp;P Automations</span>
           </a>
           <nav className="hidden items-center gap-10 text-sm text-muted-foreground md:flex">
