@@ -52,7 +52,15 @@ function PhoneIcon() {
 
 function MailIcon() {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.25" className="h-28 w-28 md:h-36 md:w-36" strokeLinecap="round" strokeLinejoin="round">
+    <svg
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  strokeWidth="1.25"
+  style={{ width: "100px", height: "100px" }}
+  strokeLinecap="round"
+  strokeLinejoin="round"
+>
       <rect x="2.5" y="5" width="19" height="14" rx="2" />
       <path d="m3 7 9 6 9-6" />
     </svg>
@@ -61,7 +69,15 @@ function MailIcon() {
 
 function GlobeIcon() {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.25" className="h-28 w-28 md:h-36 md:w-36" strokeLinecap="round" strokeLinejoin="round">
+    <svg
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  strokeWidth="1.25"
+  style={{ width: "100px", height: "100px" }}
+  strokeLinecap="round"
+  strokeLinejoin="round"
+>
       <circle cx="12" cy="12" r="9" />
       <path d="M3 12h18M12 3c2.5 2.6 3.8 5.7 3.8 9S14.5 18.4 12 21c-2.5-2.6-3.8-5.7-3.8-9S9.5 5.6 12 3Z" />
     </svg>
@@ -70,7 +86,15 @@ function GlobeIcon() {
 
 function GearIcon() {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.25" className="h-28 w-28 md:h-36 md:w-36" strokeLinecap="round" strokeLinejoin="round">
+    <svg
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  strokeWidth="1.25"
+  style={{ width: "100px", height: "100px" }}
+  strokeLinecap="round"
+  strokeLinejoin="round"
+>
       <circle cx="12" cy="12" r="3.2" />
       <path d="M12 2.8v2.6M12 18.6v2.6M21.2 12h-2.6M5.4 12H2.8M18.5 5.5l-1.8 1.8M7.3 16.7l-1.8 1.8M18.5 18.5l-1.8-1.8M7.3 7.3 5.5 5.5" />
     </svg>
