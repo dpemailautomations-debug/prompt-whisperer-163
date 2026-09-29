@@ -83,7 +83,7 @@ function Circle({ children, label, details }: { children: React.ReactNode; label
     <Dialog>
       <DialogTrigger asChild>
         <Button variant="ghost" className="group mx-auto h-auto w-full flex-col gap-5 rounded-none bg-transparent px-2 py-0 text-foreground shadow-none hover:bg-transparent hover:text-foreground">
-          <span className="flex h-32 w-32 items-center justify-center rounded-full border border-border text-navy transition-colors group-hover:border-primary group-hover:bg-secondary group-focus-visible:border-primary md:h-40 md:w-40">
+          <span className="flex h-24 w-24 items-center justify-center rounded-full border border-border text-navy transition-colors group-hover:border-primary group-hover:bg-secondary group-focus-visible:border-primary md:h-28 md:w-28">
             {children}
           </span>
           <span className="whitespace-normal text-center text-base font-medium md:text-lg">{label}</span>
