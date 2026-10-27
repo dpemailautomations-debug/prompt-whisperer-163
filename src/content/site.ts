@@ -16,9 +16,10 @@ export const content = {
       heading: "Our offers",
       phone: {
         title: "Telephone",
+        intro: "Our AI voice agents handle both inbound and outbound calls.",
         caller: {
-          title: "AI Caller",
-          body: "An AI caller can pick up calls, handle customer support 24/7, set appointments, solve delegated problems and collect information.",
+          title: "AI Voice Agent",
+          body: "An AI voice agent can pick up your calls and reach out to customers on its own — handling support 24/7, setting appointments, solving delegated problems and collecting information.",
           points: [
             "24/7 answering and support",
             "In your tone of voice",
@@ -34,6 +35,26 @@ export const content = {
             "Smart and human",
           ],
         },
+        capabilities: [
+          {
+            title: "Inbound calling",
+            body: "AI answers incoming calls, handles customer inquiries, qualifies leads, schedules appointments, and provides support.",
+          },
+          {
+            title: "Outbound calling",
+            body: "AI proactively contacts existing leads, follows up with prospects, reactivates old contacts, qualifies potential customers, and books appointments.",
+          },
+          {
+            title: "AI cold calling",
+            body: "AI initiates outreach to new prospects, engages in natural conversations, identifies interest, qualifies leads, and helps generate new business opportunities.",
+          },
+        ],
+      },
+      demo: {
+        heading: "Experience our AI voice agent live",
+        body: "Don't just take our word for it. Call our AI agent and experience a real conversation in Estonian, English, or Russian.",
+        button: "Call the AI demo",
+        languages: ["Eesti", "English", "Русский"],
       },
       email: {
         title: "Email",
@@ -88,9 +109,10 @@ export const content = {
       heading: "Meie pakkumised",
       phone: {
         title: "Telefon",
+        intro: "Meie AI häälagendid hoolitsevad nii sisenevate kui ka väljuvate kõnede eest.",
         caller: {
-          title: "AI Räägib",
-          body: "Vastab kõnedele ükskõik kuna, 24/7 klienditugi, broneerib aegu, lahendab probleeme ja kogub infot.",
+          title: "AI Häälagent",
+          body: "AI häälagent vastab sinu kõnedele ja võtab ise klientidega ühendust — 24/7 klienditugi, aegade broneerimine, probleemide lahendamine ja info kogumine.",
           points: [
             "24/7 Vastamine ja Tugi",
             "Sinu Hääletoonis",
@@ -106,6 +128,26 @@ export const content = {
             "Nutikas ja inimlik",
           ],
         },
+        capabilities: [
+          {
+            title: "Sisenevad kõned",
+            body: "AI vastab sissetulevatele kõnedele, tegeleb kliendi päringutega, kvalifitseerib vihjeid, broneerib aegu ja pakub tuge.",
+          },
+          {
+            title: "Väljuvad kõned",
+            body: "AI pöördub ise olemasolevate vihjetega, teeb potentsiaalsetele klientidele järelkõnesid, aktiveerib vanu kontakte, kvalifitseerib potentsiaalseid kliente ja broneerib aegu.",
+          },
+          {
+            title: "AI külma kõned",
+            body: "AI võtab ühendust uute potentsiaalsete klientidega, vestleb loomulikult, märkab huvi, kvalifitseerib vihjeid ja aitab luua uusi ärivõimalusi.",
+          },
+        ],
+      },
+      demo: {
+        heading: "Proovi meie AI häälagenti otse",
+        body: "Ära jää ainult meie sõnade juurde. Helista meie AI agendile ja koge päris vestlust eesti, inglise või vene keeles.",
+        button: "Helista AI demole",
+        languages: ["Eesti", "English", "Русский"],
       },
       email: {
         title: "E-post",
@@ -173,6 +215,8 @@ export const contactDetails = {
   name: "Taavi Pastik",
   phone: "+372 5907 4547",
   phoneHref: "tel:+37259074547",
+  demoPhone: "+372 5723 7817",
+  demoPhoneHref: "tel:+37257237817",
   personalEmail: "tpastik@dpautomations.com",
   generalEmail: "info@dpautomations.com",
   booking: "https://cal.com/taavi-pastik-0y2k3l/30min",
