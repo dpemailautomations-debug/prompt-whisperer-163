@@ -208,13 +208,24 @@ function Index() {
             <div className="mt-16 grid grid-cols-1 gap-14 sm:grid-cols-2 lg:grid-cols-4">
               <Circle label={t.services.phone.title} details={
                 <>
-                  {[t.services.phone.caller, t.services.phone.sms].map((item) => (
-                    <div key={item.title}>
-                      <h4 className="font-semibold text-foreground">{item.title}</h4>
-                      <p className="mt-2">{item.body}</p>
-                      <ul className="mt-3 space-y-1 text-sm">{item.points.map((point) => <li key={point}>— {point}</li>)}</ul>
-                    </div>
-                  ))}
+                  <p className="font-medium text-foreground">{t.services.phone.intro}</p>
+                  <div>
+                    <h4 className="font-semibold text-foreground">{t.services.phone.caller.title}</h4>
+                    <p className="mt-2">{t.services.phone.caller.body}</p>
+                    <ul className="mt-3 space-y-1 text-sm">{t.services.phone.caller.points.map((point) => <li key={point}>— {point}</li>)}</ul>
+                    <ul className="mt-3 space-y-2 text-sm">
+                      {t.services.phone.capabilities.map((cap) => (
+                        <li key={cap.title}>
+                          <span className="font-medium text-foreground">{cap.title}</span> — {cap.body}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-foreground">{t.services.phone.sms.title}</h4>
+                    <p className="mt-2">{t.services.phone.sms.body}</p>
+                    <ul className="mt-3 space-y-1 text-sm">{t.services.phone.sms.points.map((point) => <li key={point}>— {point}</li>)}</ul>
+                  </div>
                 </>
               }><PhoneIcon /></Circle>
               <Circle label={t.services.email.title} details={<p>{t.services.email.body}</p>}><MailIcon /></Circle>
@@ -227,23 +238,73 @@ function Index() {
                 <h3 className="text-2xl font-semibold tracking-tight md:text-3xl">
                   {t.services.phone.title}
                 </h3>
+                <p className="mt-4 max-w-2xl leading-relaxed text-muted-foreground">{t.services.phone.intro}</p>
                 <div className="mt-10 grid gap-12 md:grid-cols-2">
-                  {[t.services.phone.caller, t.services.phone.sms].map((item) => (
-                    <div key={item.title}>
-                      <h4 className="text-lg font-medium">{item.title}</h4>
-                      <p className="mt-3 max-w-md leading-relaxed text-muted-foreground">
-                        {item.body}
-                      </p>
-                      <ul className="mt-6 space-y-2 text-sm text-muted-foreground">
-                        {item.points.map((p) => (
-                          <li key={p} className="flex items-start gap-3">
-                            <span className="mt-2.5 h-px w-4 shrink-0 bg-border" />
-                            {p}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  ))}
+                  <div>
+                    <h4 className="text-lg font-medium">{t.services.phone.caller.title}</h4>
+                    <p className="mt-3 max-w-md leading-relaxed text-muted-foreground">
+                      {t.services.phone.caller.body}
+                    </p>
+                    <ul className="mt-6 space-y-2 text-sm text-muted-foreground">
+                      {t.services.phone.caller.points.map((p) => (
+                        <li key={p} className="flex items-start gap-3">
+                          <span className="mt-2.5 h-px w-4 shrink-0 bg-border" />
+                          {p}
+                        </li>
+                      ))}
+                    </ul>
+                    <ul className="mt-6 space-y-4 text-sm text-muted-foreground">
+                      {t.services.phone.capabilities.map((cap) => (
+                        <li key={cap.title} className="flex items-start gap-3">
+                          <span className="mt-2.5 h-px w-4 shrink-0 bg-border" />
+                          <span>
+                            <span className="font-medium text-foreground">{cap.title}:</span> {cap.body}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-medium">{t.services.phone.sms.title}</h4>
+                    <p className="mt-3 max-w-md leading-relaxed text-muted-foreground">
+                      {t.services.phone.sms.body}
+                    </p>
+                    <ul className="mt-6 space-y-2 text-sm text-muted-foreground">
+                      {t.services.phone.sms.points.map((p) => (
+                        <li key={p} className="flex items-start gap-3">
+                          <span className="mt-2.5 h-px w-4 shrink-0 bg-border" />
+                          {p}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="mt-20 rounded-sm border border-primary p-8 md:p-12">
+                  <h4 className="text-xl font-semibold tracking-tight md:text-2xl">{t.services.demo.heading}</h4>
+                  <p className="mt-4 max-w-xl leading-relaxed text-muted-foreground">{t.services.demo.body}</p>
+                  <div className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-2 text-xs tracking-[0.2em] text-muted-foreground uppercase">
+                    {t.services.demo.languages.map((language, i) => (
+                      <span key={language} className="flex items-center gap-3">
+                        {i > 0 && <span className="h-1 w-1 rounded-full bg-border" />}
+                        {language}
+                      </span>
+                    ))}
+                  </div>
+                  <a
+                    href={contactDetails.demoPhoneHref}
+                    className="mt-8 inline-block text-3xl font-semibold tracking-tight underline-offset-8 hover:underline md:text-4xl"
+                  >
+                    {contactDetails.demoPhone}
+                  </a>
+                  <div className="mt-8">
+                    <a
+                      href={contactDetails.demoPhoneHref}
+                      className="inline-block rounded-sm bg-primary px-10 py-4 text-base font-medium text-primary-foreground transition-opacity hover:opacity-90"
+                    >
+                      {t.services.demo.button}
+                    </a>
+                  </div>
                 </div>
               </div>
 
