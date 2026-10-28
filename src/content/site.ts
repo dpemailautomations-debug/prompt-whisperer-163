@@ -145,8 +145,8 @@ export const content = {
       },
       demo: {
         heading: "Proovi meie AI häälagenti otse",
-        body: "Ära jää ainult meie sõnade juurde. Helista meie AI agendile ja koge päris vestlust eesti, inglise või vene keeles.",
-        button: "Helista AI demole",
+        body: "Ära jää ainult meie sõnu uskuma. Helista meie AI näidisagendile ja koge reaalajas vestlust eesti, inglise või vene keeles.",
+        button: "Helista näidisele",
         languages: ["Eesti", "English", "Русский"],
       },
       email: {
