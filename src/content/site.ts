@@ -16,10 +16,10 @@ export const content = {
       heading: "Our offers",
       phone: {
         title: "Telephone",
-        intro: "Our AI voice agents handle both inbound and outbound calls.",
+        intro: "Our AI voice agents handle both inbound and outbound calls. The agents are capable of switching seamlessly between different languages like English, Russian, Estonian.",
         caller: {
-          title: "AI Voice Agent",
-          body: "An AI voice agent can pick up your calls and reach out to customers on its own — handling support 24/7, setting appointments, solving delegated problems and collecting information.",
+          title: "The AI Voice Agent",
+          body: "An AI voice agent can pick up your calls and reach out to customers, leads, and suspects on its own. It can handle support 24/7, set appointments, solve delegated problems, and collect information.",
           points: [
             "24/7 answering and support",
             "In your tone of voice",
@@ -27,26 +27,26 @@ export const content = {
           ],
         },
         sms: {
-          title: "SMS Text Back Automation",
+          title: "Additional Option: SMS Text-Back Automation",
           body: "When you miss a call, an automated text can immediately follow up. It can catch leads, schedule appointments or handle problems revealed through the conversation.",
           points: [
-            "Catch every interested caller",
+            "Catch every caller",
             "Synced appointment booking",
-            "Smart and human",
+            "Human tone made in your texting patterns",
           ],
         },
         capabilities: [
           {
-            title: "Inbound calling",
+            title: "Inbound calling.",
             body: "AI answers incoming calls, handles customer inquiries, qualifies leads, schedules appointments, and provides support.",
           },
           {
-            title: "Outbound calling",
+            title: "Outbound calling.",
             body: "AI proactively contacts existing leads, follows up with prospects, reactivates old contacts, qualifies potential customers, and books appointments.",
           },
           {
-            title: "AI cold calling",
-            body: "AI initiates outreach to new prospects, engages in natural conversations, identifies interest, qualifies leads, and helps generate new business opportunities.",
+            title: "AI cold calling.",
+            body: "AI initiates outreach to new prospects, engages in natural conversations, identifies interest, qualifies leads, and helps generate new business opportunities. We personally make sure your situation in accordance with the EU/US laws.",
           },
         ],
       },
