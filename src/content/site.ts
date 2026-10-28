@@ -109,10 +109,10 @@ export const content = {
       heading: "Meie pakkumised",
       phone: {
         title: "Telefon",
-        intro: "Meie AI häälagendid hoolitsevad nii sisenevate kui ka väljuvate kõnede eest.",
+        intro: "Meie AI häälagendid hoolitsevad nii sissetulevate kui ka väljuvate kõnede eest.",
         caller: {
           title: "AI Häälagent",
-          body: "AI häälagent vastab sinu kõnedele ja võtab ise klientidega ühendust — 24/7 klienditugi, aegade broneerimine, probleemide lahendamine ja info kogumine.",
+          body: "AI häälagent vastab sinu kõnedele ja võtab ka ise ühendust. Näidisülesanded: 24/7 klienditugi, aegade broneerimine, probleemide lahendamine ja info kogumine.",
           points: [
             "24/7 Vastamine ja Tugi",
             "Sinu Hääletoonis",
@@ -121,25 +121,25 @@ export const content = {
         },
         sms: {
           title: "SMS tagasihelistamise automaatika",
-          body: "Saadab vastamata kõnedele koheselt sõnumi: püüab vihjeid, broneerib või lahendab kliendi probleeme.",
+          body: "Saadab vastamata kõnedele koheselt sõnumi: püüab vihjeid, broneerib aegu või lahendab kliendi probleeme. ",
           points: [
             "Püüa kinni iga huviline",
-            "Sünkroniseeritud ajabroneering",
-            "Nutikas ja inimlik",
+            "Sünkroniseeritud ajabroneering Sinu kalendrisse",
+            "Nutikas ja inimlik, teie kirjamustrite järgi. ",
           ],
         },
         capabilities: [
           {
-            title: "Sisenevad kõned",
-            body: "AI vastab sissetulevatele kõnedele, tegeleb kliendi päringutega, kvalifitseerib vihjeid, broneerib aegu ja pakub tuge.",
+            title: "Sisenevad kõned.",
+            body: "AI vastab sissetulevatele kõnedele, tegeleb kliendi päringutega, kvalifitseerib, broneerib aegu ja pakub tuge.",
           },
           {
-            title: "Väljuvad kõned",
-            body: "AI pöördub ise olemasolevate vihjetega, teeb potentsiaalsetele klientidele järelkõnesid, aktiveerib vanu kontakte, kvalifitseerib potentsiaalseid kliente ja broneerib aegu.",
+            title: "Väljuvad kõned.",
+            body: "AI pöördub ise huviliste poole, teeb potentsiaalsetele klientidele järelkõnesid, hoiab ühendust vanade kontaktidega, kvalifitseerib kliente ja broneerib aegu.",
           },
           {
-            title: "AI külma kõned",
-            body: "AI võtab ühendust uute potentsiaalsete klientidega, vestleb loomulikult, märkab huvi, kvalifitseerib vihjeid ja aitab luua uusi ärivõimalusi.",
+            title: "AI külmad kõned.",
+            body: "AI võtab ühendust uute potentsiaalsete klientidega, vestleb loomulikult, märkab huvi, kvalifitseerib ja aitab luua uusi võimalusi. Teeme personaalselt kindlaks kooskõlastuse EU/USA seadustega. ",
           },
         ],
       },
